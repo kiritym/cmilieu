@@ -15,7 +15,7 @@
           %a{href: "#"}= current_user.email
           %ul.dropdown
             %li
-              %a{href: "#"} Profile
+              %a{href: profile_path(current_user)} Profile
             %li.divider
             %li
               = link_to('Logout', destroy_user_session_path, :method => :delete)

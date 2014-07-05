@@ -1,0 +1,27 @@
+%h1= @profile.full_name
+
+.row
+  %a.button{href:edit_profile_path} Edit
+
+%table
+  %tr
+    %td ID
+    %td= @profile.employee_id
+  %tr
+    %td Cell Phone
+    %td= @profile.cell_phone
+  %tr
+    %td Address
+    %td= @profile.address
+  %tr
+    %td Location
+    %td= @profile.current_location
+  %tr
+    %td LinkedIn
+    %td= @profile.linkedIn_profile
+  %tr
+    %td Github
+    %td= @profile.github_profile
+  %tr
+    %td Twitter
+    %td= @profile.twitter_profile

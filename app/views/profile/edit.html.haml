@@ -1,0 +1,35 @@
+.page-header
+  %h1 Edit Profile
+
+= form_for @profile do |f|
+  .row
+    = f.label :first_name
+    = f.text_field :first_name
+  .row
+    = f.label :last_name
+    = f.text_field :last_name
+  .row
+    = f.label :employee_id
+    = f.text_field :employee_id
+  .row
+    = f.label :cell_phone
+    = f.text_field :cell_phone
+  .row
+    = f.label :address
+    = f.text_field :address
+  .row
+    = f.label :current_location
+    = f.text_field :current_location
+  .row
+    = f.label :linkedIn_profile
+    = f.text_field :linkedIn_profile
+  .row
+    = f.label :github_profile
+    = f.text_field :github_profile
+  .row
+    = f.label :twitter_profile
+    = f.text_field :twitter_profile
+  .row
+    = f.submit 'Save', class: 'button'
+  .row
+    %a.button{href: profile_path(current_user) } Cancel
