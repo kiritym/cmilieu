@@ -9,7 +9,7 @@
         %span Menu
   %section.top-bar-section
     %ul.left
-    = if user_signed_in?
+    - if user_signed_in?
       %ul.right
         %li.has-dropdown
           %a{href: "#"}= current_user.email
