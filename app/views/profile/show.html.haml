@@ -1,7 +1,9 @@
 %h1= @profile.full_name
 
 .row
-  %a.button{href:edit_profile_path} Edit
+  - if user_signed_in?
+    - if @profile == current_user.profile
+      %a.button{href:edit_profile_path} Edit
 
 .row
   .large-3.columns

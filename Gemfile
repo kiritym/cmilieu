@@ -38,6 +38,7 @@ gem 'foundation-rails'
 gem 'font-awesome-sass'
 gem 'mongoid-grid_fs', git: 'https://github.com/ahoward/mongoid-grid_fs'
 gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
+gem 'mongoid_search'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

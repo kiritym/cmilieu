@@ -1,6 +1,10 @@
 Cmilieu::Application.routes.draw do
+  get "search/result"
+  get "search/input"
+
   resources :profile, :only => [:show, :edit, :update]
   devise_for :users
+
 
   get "home/index"
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,5 +1,6 @@
 class Profile
   include Mongoid::Document
+  
 
   field :first_name,              type: String, default: ""
   field :last_name,               type: String, default: ""
@@ -11,9 +12,13 @@ class Profile
   field :github_profile,          type: String, default: ""
   field :twitter_profile,         type: String, default: ""
 
-  embedded_in :user
+
+
+  
 
   mount_uploader :avatar, AvatarUploader
+
+  embedded_in :user
 
   def full_name
     "#{self.first_name} #{self.last_name}"

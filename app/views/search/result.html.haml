@@ -1,0 +1,34 @@
+.page-header
+  - if @user.count == 0
+    %h1 No results found
+  - else
+    %h1 Search Results
+    .row 
+      .large-9.columns
+        %table
+          %thead
+            %tr
+              %th{width: "200"} User Name
+              %th{width: "200"} Email ID
+              %th{width: "150"} Employee ID
+              %th{width: "150"} Phone Number
+              %th{width: "150"} Image
+          %tbody
+            - @user.each do |u|
+              %tr
+                %td= link_to u.profile.full_name, profile_path(u)
+                %td= link_to u.email, u.profile 
+                %td= u.profile.employee_id
+                %td= u.profile.cell_phone
+                %td
+                  %a.avatar-thum.th{href: u.profile.avatar_url }
+                    %img{src: u.profile.avatar_url }
+          
+    
+          
+  
+   
+
+
+
+

@@ -1,5 +1,7 @@
 class User
   include Mongoid::Document
+  include Mongoid::Search
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -33,11 +35,15 @@ class User
   # field :failed_attempts, type: Integer, default: 0 # Only if lock strategy is :failed_attempts
   # field :unlock_token,    type: String # Only if unlock strategy is :email or :both
   # field :locked_at,       type: Time
-
+  
   embeds_one :profile
+  
 
   after_create do |document|
     document.create_profile
   end
 
+  search_in :email, :profile => [:first_name, :last_name, :employee_id, :cell_phone, :address, :linkedIn_profile, :github_profile, :twitter_profile]
+  
+  
 end
